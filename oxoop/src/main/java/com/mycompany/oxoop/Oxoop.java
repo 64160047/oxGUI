@@ -10,7 +10,21 @@ package com.mycompany.oxoop;
  */
 public class Oxoop {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!!!");
+   public static void main(String[] args) {
+        Game game = new Game();
+        game.showWelcome();
+        game.newBoard();
+        while(true) {
+            game.showTable();
+            game.showTurn();
+            game.inputRowCol();
+            if(game.isFinish()) {
+                game.showTable();
+                game.showResult();
+                game.showStat();
+                game.newBoard();
+            }
+        }               
     }
+
 }
